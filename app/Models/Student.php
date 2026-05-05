@@ -32,4 +32,5 @@ class Student extends Model
             ->withTimestamps();
     }
     public function enrollments(): HasMany { return $this->hasMany(StudentEnrollment::class); }
+    public function attendances(): HasMany { return $this->hasMany(StudentAttendance::class); }
 }

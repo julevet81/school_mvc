@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +22,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Schema::defaultStringLength(191);
+        Paginator::useBootstrapFive();
+
+        if (request()->route() !== null) {
+            app()->setLocale(LaravelLocalization::getCurrentLocale());
+        }
     }
 }
