@@ -13,5 +13,15 @@
     .sidebar-section-title { letter-spacing: .08em; text-transform: uppercase; font-size: 12px; }
     .badge-soft { background: rgba(0,0,0,.06); color: #495057; }
     .table td, .table th { vertical-align: middle; }
+    .side-menu-fixed { display: flex; flex-direction: column; }
+    .side-menu-fixed .scrollbar.side-menu-bg {
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-gutter: stable;
+    }
+    .side-menu-fixed .side-menu { min-height: 100%; padding-bottom: 24px; }
+    html[dir="ltr"] .side-menu-fixed .scrollbar.side-menu-bg { overscroll-behavior: contain; }
 </style>
 @yield('css')

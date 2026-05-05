@@ -1,10 +1,10 @@
 @php
-    $supportedLocales = LaravelLocalization::getSupportedLocales();
+$supportedLocales = LaravelLocalization::getSupportedLocales();
 @endphp
 <nav class="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-left navbar-brand-wrapper">
         <a class="navbar-brand brand-logo" href="{{ route('dashboard') }}">
-            <img src="{{ asset('assets/images/logo-dark.png') }}" alt="logo">
+            <img src="{{ asset('assets/images/logo-white.png') }}" alt="logo" style="width:150px; height:auto;">
         </a>
         <a class="navbar-brand brand-logo-mini" href="{{ route('dashboard') }}">
             <img src="{{ asset('assets/images/logo-icon-dark.png') }}" alt="logo">
@@ -26,9 +26,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 @foreach ($supportedLocales as $localeCode => $properties)
-                    <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                        {{ $properties['native'] }}
-                    </a>
+                <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                    {{ $properties['native'] }}
+                </a>
                 @endforeach
             </div>
         </li>
